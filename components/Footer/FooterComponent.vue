@@ -36,7 +36,7 @@ export default {
   data: () => ({
     socialItems: [
       {
-        to: '#',
+        to: 'https://github.com/GigaVardia',
         icon: 'mdi-github',
         id: 'footer-social-item-github'
       },
