@@ -33,10 +33,30 @@
     </v-main>
 
     <v-footer app>
-      <v-container>
-        <v-row>
+      <v-container class="pa-0">
+        <v-row
+          no-gutters
+          class="d-flex align-center text-center"
+        >
           <v-col>
-            2021
+            &copy; 2021
+          </v-col>
+
+          <v-col>
+            By Giga Vardia
+          </v-col>
+
+          <v-col>
+            <v-btn
+              v-for="item in socialItems"
+              :key="item.id"
+              :to="item.to"
+              icon
+            >
+              <v-icon>
+                {{ item.icon }}
+              </v-icon>
+            </v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -46,9 +66,19 @@
 
 <script>
 export default {
-  data () {
-    return {
-    }
-  }
+  data: () => ({
+    socialItems: [
+      {
+        to: '#',
+        icon: 'mdi-github',
+        id: 'footer-social-item-github'
+      },
+      {
+        to: '#',
+        icon: 'mdi-linkedin',
+        id: 'footer-social-item-linkedin'
+      }
+    ]
+  })
 }
 </script>
