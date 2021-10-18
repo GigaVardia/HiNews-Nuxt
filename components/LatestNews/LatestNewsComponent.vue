@@ -4,6 +4,7 @@
     hide-delimiter-background
     delimiter-icon="mdi-minus"
     min-height="600"
+    cycle
   >
     <v-carousel-item
       v-for="article in news"
@@ -18,7 +19,7 @@
           <v-col cols="6" class="pa-4">
             <v-card height="100%" max-height="468">
               <v-card-text>
-                <nuxt-link to="/">
+                <nuxt-link :to="{ name: 'articles-article', params: { article: article.title }}">
                   <v-img
                     :src="article.urlToImage"
                     :lazy-src="article.urlToImage"
@@ -33,7 +34,9 @@
           <v-col cols="6" class="pa-4">
             <v-card height="100%" max-height="468">
               <v-card-title class="text-h4 mb-2">
-                {{ article.title }}
+                <nuxt-link :to="{ name: 'articles-article', params: { article: article.title }}">
+                  {{ article.title }}
+                </nuxt-link>
               </v-card-title>
 
               <v-card-subtitle>
@@ -53,9 +56,9 @@
                   Source
                 </a>
                 <v-btn
+                  :to="{ name: 'articles-article', params: { article: article.title }}"
                   color="blue"
                   class="ml-auto"
-                  to="/news"
                   nuxt
                   text
                   depressed

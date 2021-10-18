@@ -17,25 +17,26 @@ import MainArticlesListComponent from '~/components/MainArticlesListComponent/Ma
 import MainPaginationComponent from '~/components/MainPagination/MainPaginationComponent.vue'
 export default {
   components: { MainArticlesListComponent, MainPaginationComponent },
+  async asyncData ({ store }) {
+    await store.dispatch('newsAction')
+  },
   data: () => ({
-    news: null,
     latestNewsSize: 5,
     perPage: 10,
     page: 1
   }),
-  async fetch () {
-    this.news = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${process.env.API_KEY}`)
-      .then(res => res.json())
-  },
   computed: {
+    news () {
+      return this.$store.getters.newsGetter
+    },
     latestNews () {
-      return this.news.articles.slice(0, this.latestNewsSize)
+      return this.news.slice(0, this.latestNewsSize)
     },
     getCurrentPageNews () {
-      return this.news.articles.slice(this.perPage * (this.page - 1), this.perPage * this.page)
+      return this.news.slice(this.perPage * (this.page - 1), this.perPage * this.page)
     },
     length () {
-      return this.news.articles.length / this.perPage
+      return this.news.length / this.perPage
     }
   }
 }

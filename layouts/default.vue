@@ -30,6 +30,10 @@ export default {
 </script>
 
 <style lang="scss">
+a {
+  color: inherit !important;;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

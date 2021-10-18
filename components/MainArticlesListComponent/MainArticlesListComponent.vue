@@ -8,11 +8,16 @@
       >
         <v-card width="430" height="360">
           <v-card-title>
-            {{ article.title }}
+            <nuxt-link
+              :to="{ name: 'articles-article', params: { article: article.title }}"
+              class="text-decoration-none"
+            >
+              {{ article.title }}
+            </nuxt-link>
           </v-card-title>
 
           <v-card-text>
-            <nuxt-link to="/">
+            <nuxt-link :to="{ name: 'articles-article', params: { article: article.title }}">
               <v-img
                 :src="article.urlToImage"
                 :lazy-src="article.urlToImage"
