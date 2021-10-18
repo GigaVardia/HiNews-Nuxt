@@ -6,7 +6,7 @@
         :key="`main-articles-${article.title}`"
         cols="3"
       >
-        <v-card>
+        <v-card width="430" height="360">
           <v-card-title>
             {{ article.title }}
           </v-card-title>
@@ -17,8 +17,8 @@
                 :src="article.urlToImage"
                 :lazy-src="article.urlToImage"
                 :alt="article.title"
-                max-height="430"
-                max-width="600"
+                width="390"
+                height="220"
               />
             </nuxt-link>
           </v-card-text>
