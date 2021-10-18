@@ -1,3 +1,7 @@
+APP ON HEROKU
+https://nuxt-tech-news.herokuapp.com/
+
+
 # news-website-vue
 
 ## Build Setup
