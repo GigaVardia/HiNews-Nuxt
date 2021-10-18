@@ -30,6 +30,10 @@ export default {
 </script>
 
 <style lang="scss">
+$dark_white: #F1F1F1;
+$grey: #A1A1A1;
+$light_black: #252525;
+
 a {
   color: inherit !important;;
 }
