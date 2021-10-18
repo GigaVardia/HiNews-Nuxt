@@ -28,3 +28,35 @@ export default {
   })
 }
 </script>
+
+<style lang="scss">
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: $grey;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($grey, 20%);
+}
+
+.v-application.theme--light {
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $dark_white;
+  }
+}
+
+.v-application.theme--dark {
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $light_black;
+  }
+}
+</style>

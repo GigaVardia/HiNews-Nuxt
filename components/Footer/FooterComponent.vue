@@ -1,5 +1,5 @@
 <template>
-  <v-footer app>
+  <v-footer>
     <v-container class="pa-0">
       <v-row
         no-gutters
