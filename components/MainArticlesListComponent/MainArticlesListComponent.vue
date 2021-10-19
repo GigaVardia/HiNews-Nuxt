@@ -4,9 +4,10 @@
       <v-col
         v-for="article in news"
         :key="`main-articles-${article.title}`"
-        cols="3"
+        cols="12"
+        md="4"
       >
-        <v-card width="430" height="360">
+        <v-card :width="isMobile ? '100%' : '430'" height="360">
           <v-card-title>
             <nuxt-link
               :to="{ name: 'articles-article', params: { article: article.title }}"
@@ -22,8 +23,6 @@
                 :src="article.urlToImage"
                 :lazy-src="article.urlToImage"
                 :alt="article.title"
-                width="390"
-                height="220"
               />
             </nuxt-link>
           </v-card-text>
@@ -41,6 +40,11 @@ export default {
       type: Array,
       default: null,
       reqired: true
+    }
+  },
+  computed: {
+    isMobile () {
+      return this.$vuetify.breakpoint.mobile
     }
   }
 }

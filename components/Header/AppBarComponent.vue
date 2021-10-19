@@ -8,15 +8,26 @@
           </nuxt-link>
         </v-col>
         <v-spacer />
-        <v-col>
+        <v-col
+          v-if="isMobile"
+          class="d-flex justify-end"
+        >
+          <v-btn icon depressed>
+            <v-icon>
+              mdi-menu
+            </v-icon>
+          </v-btn>
+        </v-col>
+        <v-col
+          v-else
+          class="d-flex align-center"
+        >
           <v-text-field
             class="mr-3"
             placeholder="Search"
             append-icon="mdi-magnify"
             hide-details
           />
-        </v-col>
-        <v-col>
           <v-btn
             icon
             @click="$emit('authClick', $event)"
@@ -41,7 +52,15 @@
 
 <script>
 export default {
-  name: 'AppBarComponent'
+  name: 'AppBarComponent',
+  computed: {
+    isMobile () {
+      return this.$vuetify.breakpoint.mobile
+    }
+  },
+  created () {
+    console.log(this.$vuetify.breakpoint.mobile)
+  }
 }
 </script>
 

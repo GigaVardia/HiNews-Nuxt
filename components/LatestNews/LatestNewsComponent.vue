@@ -4,7 +4,6 @@
     hide-delimiter-background
     delimiter-icon="mdi-minus"
     min-height="600"
-    cycle
   >
     <v-carousel-item
       v-for="article in news"

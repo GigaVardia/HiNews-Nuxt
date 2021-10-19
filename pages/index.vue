@@ -22,12 +22,14 @@ export default {
   },
   data: () => ({
     latestNewsSize: 5,
-    perPage: 10,
     page: 1
   }),
   computed: {
     news () {
       return this.$store.getters.newsGetter
+    },
+    perPage () {
+      return this.$store.getters.newsPerPageGetter
     },
     latestNews () {
       return this.news.slice(0, this.latestNewsSize)
