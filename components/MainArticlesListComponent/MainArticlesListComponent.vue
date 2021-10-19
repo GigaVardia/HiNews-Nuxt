@@ -7,7 +7,11 @@
         cols="12"
         md="4"
       >
-        <v-card :width="isMobile ? '100%' : '430'" height="360">
+        <v-card
+          :width="isMobile ? '100%' : '430'"
+          :height="isMobile ? 'auto' : '360'"
+          class="overflow-hidden"
+        >
           <v-card-title>
             <nuxt-link
               :to="{ name: 'articles-article', params: { article: article.title }}"
@@ -23,6 +27,8 @@
                 :src="article.urlToImage"
                 :lazy-src="article.urlToImage"
                 :alt="article.title"
+                height="100%"
+                aspect-ratio="1.77"
               />
             </nuxt-link>
           </v-card-text>

@@ -23,8 +23,8 @@
                     :src="article.urlToImage"
                     :lazy-src="article.urlToImage"
                     :alt="article.title"
-                    max-height="430"
-                    max-width="816"
+                    height="434"
+                    aspect-ratio="0.75"
                   />
                 </nuxt-link>
               </v-card-text>
@@ -45,10 +45,6 @@
               <v-card-subtitle class="text-h5">
                 {{ article.description }}
               </v-card-subtitle>
-
-              <v-card-text class="text-h5">
-                {{ article.content }}
-              </v-card-text>
 
               <v-card-actions>
                 <a :href="article.url" target="_blank">
